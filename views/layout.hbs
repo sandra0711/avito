@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>Hello, world!</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </head>
+<nav class="navbar navbar-light fixed-top" style="background-color: #e3f2fd">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img style="width: 100px; height=40px"  src="/images/santa-claus-5812443_640.jpg"></a>
+     {{#if userId}}
+    <span class="text" style="color: darkblue">
+      Добро пожаловать в первый в мире Магазин деда Мороза, {{firstName}}!
+    </span>
+      {{else}}
+       <span class="text" style="color: gray">
+      Добро пожаловать в первый в мире Магазин деда Мороза!
+      </span>
+      {{/if}}
+   <ul class="nav">
+     {{#if userId}}
+    <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/goods/add">Добавить товар</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-expanded="false">Выбрать категорию</a>
+    <ul class="dropdown-menu">
+      {{#each groups}}
+        <li><a class="dropdown-item" href="/goods/group/{{this._id}}">{{this.name}}</a></li>
+      {{/each}}
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/users/logout">Выход</a>
+  </li>
+{{else}}
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Вход</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/users/register">Регистрация</a>
+  </li>
+{{/if}}
+  </ul>
+  </div>
+</nav>
+   {{{body}}}
+</html>

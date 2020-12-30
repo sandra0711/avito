@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Загрузка файла</title>
+ </head>
+ <body>
+  <div class="container">
+    <div class="row">
+        <label>Загрузить один файл:</label>
+        <input type="file" id="file" name="file" />
+    </div>
+    <div class="row">
+        <span id="output"></span>
+    </div>
+    <!-- <div class="row">
+        <label>Мультизагрузка файлов:</label>
+        <input type="file" id="fileMulti" name="fileMulti[]" multiple />
+    </div>
+    <div class="row">
+        <span id="outputMulti"></span>
+    </div> -->
+</div>
+</body>
+</html>
+
+<script>
+  function show(evt) {
+      const file = evt.target.files; // FileList object
+      const f = file[0];
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+          alert("Пожалуйста, выберите изображение...");
+      }
+      const reader = new FileReader();
+      // Closure to capture the file information.
+      reader.onload = (function() {
+          return function(e) {
+              // Render thumbnail.
+              let span = document.createElement('span');
+              span.innerHTML = ['<img src="', e.target.result, '" />'].join('');
+              document.getElementById('output').insertBefore(span, null);
+          };
+      })(f);
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+  }
+  document.getElementById('file').addEventListener('change', show, false);
+  </script>

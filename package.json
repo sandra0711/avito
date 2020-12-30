@@ -1,0 +1,43 @@
+{
+  "name": "core-rest-avito",
+  "version": "1.0.0",
+  "description": "## Изучение области компетенции",
+  "main": "app.js",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "hbs": "^4.0.6",
+    "http-errors": "^1.8.0",
+    "method-override": "^3.0.0",
+    "mongo": "^0.1.0",
+    "mongo-session": "^0.2.15",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "path": "^0.12.7",
+    "sha256": "^0.2.0",
+    "y": "^0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elbrus-Bootcamp/core-rest-avito.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elbrus-Bootcamp/core-rest-avito/issues"
+  },
+  "homepage": "https://github.com/Elbrus-Bootcamp/core-rest-avito#readme"
+}

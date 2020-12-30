@@ -1,0 +1,47 @@
+<script defer src="/js/goods.js"></script>
+
+<div class="container" style="margin-top: 110px">
+  <form action="/goods/add" method="POST" name="addGood" class="form-horizontal" role="form" enctype="multipart/form-data">
+    <h3>Добавление товара</h3>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="group">Категория</label>
+      <select class="form-select" name="group" id="group">
+        <option selected>Выбор...</option>
+        {{#each groups}}
+          <option value={{this._id}}>{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div> 
+    <div class="form-group">
+      <label for="title" class="col-sm-3 control-label">Наименование</label>
+      <div class="col-sm-9">
+        <input type="text" id="title" placeholder="Введите наименование товара" class="form-control" name="title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="about" class="col-sm-9 control-label">Описание и характеристики</label>
+      <div class="col-sm-9">
+        <textarea name="about" id="about" class="form-control" rows="5" placeholder="Опишите товар"></textarea>
+      </div>
+    </div> 
+    <div class="form-group">
+      <label for="price" class="col-sm- control-label"></label>Цена</label>
+      <div class="col-sm-9">
+        <input type="text" name="price" id="price" placeholder="Укажите цену в российских рублях" class="form-control">
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="col-sm-9">
+        <span class="input-group-text">Фото:</span>
+        <div class="form-file">
+          <input type="file" mclass="form-file-input" name="file" id="file">
+        </div>
+        <div ><img src='' id="output" name="output"/></div>
+      </div>
+    </div>
+    <button id="addGood" type="submit" class="btn btn-primary btn-block">Добавить товар</button>
+  </form> 
+</div>
+
+
+

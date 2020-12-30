@@ -1,0 +1,40 @@
+
+<div class="container" style="margin-top: 150px">
+    <h3>Информация о товаре</h3>
+
+    <div class="mb-3">
+      <div class="col-sm-6">
+        <p><small>Категория</small></p>
+        <p>{{good.group.name}}</p>
+      </div>
+      <div class="col-sm-6">
+        <p><small>Наименование</small></p>
+        <p>{{good.title}}</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <p class="col-sm-3"><small>Описание и характеристики</small></p>
+      <div class="col-sm-9">
+        <p name="about"class="form-control" value="{{title.about}}"></p>
+      </div>
+    </div> 
+    <div class="form-group">
+      <label for="price" class="col-sm- control-label"></label>Цена</label>
+      <div class="col-sm-9">
+        <input type="text" name="price" id="price" value={{good.price}} class="form-control">
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="col-sm-9">
+        <span class="input-group-text">Фото:</span>
+        <div class="form-file">
+          <img style="width: 250px; height: 200px" src="{{good.image}}" mclass="form-file-input" name="file" id="file">
+        </div>
+      </div>
+    </div>
+    <button id="addGood" type="submit" class="btn btn-primary btn-block">Добавить товар</button>
+  </form> 
+</div>
+
+
+

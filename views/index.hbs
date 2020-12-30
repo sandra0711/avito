@@ -1,0 +1,13 @@
+<div class="row" style="margin-top: 120px">
+  {{#each goods}}
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <img src="{{this.image}}" style="width: 250px; height: 300px" class="card-img-top" alt="изображение товара">
+        <a href="/goods/{{this.id}}" class="btn btn-primary">Подробней</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
